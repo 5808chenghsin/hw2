@@ -20,13 +20,13 @@ Keyword: 電腦視覺, MUNIT, 影像品質, 多樣性
 
 - 因UNIT model僅能一對一影像轉換，因此Xun Huang等四位學者在2018年Cornell University與NVIDIA的產學合作計劃中，發表提出MUNIT model，成功突破此難題，挑戰一對多影像生成，成功轉出多張影像。而本文正探討MUNIT的影像品質與多樣性等電腦視覺效果，與其它ML Model比較是否具有提供消費者最佳品質。
 
-|讓我們觀看下面關於MUNIT實驗成果影片|
-|:-----:|
-[![](http://img.youtube.com/vi/ab64TWzWn40/0.jpg)](http://www.youtube.com/watch?v=ab64TWzWn40 "")
-
 - 因為電腦視覺(Computer Vision)領域中，從ㄧ個影像從ㄧ處擷取轉移到另一處，存有許多問題，像是高強度辨識率、著色、修復、屬性移轉、樣式移轉等。像這種跨域的影像對影像轉換(cross-domain image-to-image translation)的問題，目前受到全球重大關注! 當dataset 與paired examples進行mapping時，可以透過條件生成模型(conditional generative model) 或簡單生成模型(simple regression model)加以解決。在unsupervision下，我們更關注對於影像內容環境的挑戰。在跨域配對(cross-domain mapping)領域上，多模態(multimodal)最令人感到興趣，由於影像中天氣、時間、光照等原因，現今技術採確定性(deterministic)或單峰(unimodal)進行mapping。結果圖片仍然無法全部分佈而輸出，縱使加入noise，深度學習神經網路仍舊無法learning。
 
 - 因此本文提出Xun Huang的MUNIT，首先我們假設影像的潛在空間，可以被分解為內容碼(content code)與樣式碼(style code)，進一步讓兩張不同影像共享content code，但不共享style code，然後兩張影像重新組合訓練後，模型產生多樣性與多模態輸出，兼具高影像品質，取代傳統方法。
+
+|讓我們觀看下面關於MUNIT實驗成果影片|
+|:-----:|
+[![](http://img.youtube.com/vi/ab64TWzWn40/0.jpg)](http://www.youtube.com/watch?v=ab64TWzWn40 "")
 
 ## Method
 MUNIT是源自UNIT與Cycle GAN而來，目標是具有Bicycle GAN輸出一對多的功能，但只要有 unpaired instances 即可進行訓練，相關基礎概念說明如下。
@@ -271,3 +271,4 @@ Bicycle GAN為監督式學習(supervised learning)，經過pair instances即可�
 2. https://ithelp.ithome.com.tw/articles/10192738
 3. http://vllab.ucmerced.edu/hylee/publication/ECCV18_DRIT.pdf
 4. https://pythonawesome.com/simple-tensorflow-implementation-of-diverse-image-to-image-translation/
+
